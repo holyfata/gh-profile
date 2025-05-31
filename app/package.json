@@ -2,13 +2,13 @@
   "name": "@gh-profile/app",
   "module": "src/index.tsx",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "dev": "bun --hot src/index.tsx",
-    "start": "NODE_ENV=production bun src/index.tsx",
+    "start": "cross-env NODE_ENV=production bun src/index.tsx",
     "build": "bun run build.ts"
   },
   "dependencies": {

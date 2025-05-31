@@ -16,6 +16,7 @@
         "@types/react": "18.3.23",
         "@types/react-dom": "18.3.7",
         "automd": "0.4.0",
+        "cross-env": "7.0.3",
         "eslint": "9.28.0",
         "eslint-plugin-react": "7.37.5",
         "eslint-plugin-react-hooks": "5.2.0",
@@ -26,7 +27,7 @@
     },
     "app": {
       "name": "@gh-profile/app",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "dependencies": {
         "@gh-profile/apis": "1.0.0",
         "bun-plugin-tailwind": "0.0.15",
@@ -40,7 +41,7 @@
     },
     "packages/apis": {
       "name": "@gh-profile/apis",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "dependencies": {
         "@gh-profile/shared": "1.0.0",
         "@gh-profile/spider": "1.0.0",
@@ -48,11 +49,11 @@
     },
     "packages/shared": {
       "name": "@gh-profile/shared",
-      "version": "1.0.0",
+      "version": "1.0.1",
     },
     "packages/spider": {
       "name": "@gh-profile/spider",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "dependencies": {
         "@gh-profile/shared": "1.0.0",
         "cheerio": "1.0.0",
@@ -305,6 +306,8 @@
     "constantinople": ["constantinople@4.0.1", "", { "dependencies": { "@babel/parser": "^7.6.0", "@babel/types": "^7.6.1" } }, "sha512-vCrqcSIq4//Gx74TXXCGnHpulY1dskqLTFGDmhrGxzeXL8lF8kvXv6mpNWlJj1uD4DW23D4ljAqbY4RRaaUZIw=="],
 
     "core-js": ["core-js@3.42.0", "", {}, "sha512-Sz4PP4ZA+Rq4II21qkNqOEDTDrCvcANId3xpIgB34NDkWc3UduWj2dqEtN9yZIq8Dk3HyPI33x9sqqU5C8sr0g=="],
+
+    "cross-env": ["cross-env@7.0.3", "", { "dependencies": { "cross-spawn": "^7.0.1" }, "bin": { "cross-env": "src/bin/cross-env.js", "cross-env-shell": "src/bin/cross-env-shell.js" } }, "sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw=="],
 
     "cross-spawn": ["cross-spawn@7.0.6", "", { "dependencies": { "path-key": "^3.1.0", "shebang-command": "^2.0.0", "which": "^2.0.1" } }, "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="],
 
@@ -806,6 +809,14 @@
 
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
+    "@gh-profile/apis/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
+
+    "@gh-profile/apis/@gh-profile/spider": ["@gh-profile/spider@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "cheerio": "1.0.0" } }, "sha512-YYWVw/iH3lPINAWltaQ+t3s1zQ+Pbv/M09DH3YA0umSOqwH2VXw0gPYhKfXkUmOHLPrhA59RpXwMYPS3saac3g=="],
+
+    "@gh-profile/app/@gh-profile/apis": ["@gh-profile/apis@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "@gh-profile/spider": "1.0.0" } }, "sha512-c9Cx1LCj2bYHbIRH+Da5vn3uh5zAXypDRRNwycD4yYiC8AtO29621JN/EMxkGNb1n+GajLZBf9lhvY+6GTzHrg=="],
+
+    "@gh-profile/spider/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
+
     "@humanfs/node/@humanwhocodes/retry": ["@humanwhocodes/retry@0.3.1", "", {}, "sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA=="],
 
     "is-expression/acorn": ["acorn@7.4.1", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A=="],
@@ -817,6 +828,10 @@
     "parse5/entities": ["entities@6.0.0", "", {}, "sha512-aKstq2TDOndCn4diEyp9Uq/Flu2i1GlLkc6XIDQSDMuaFE3OPW5OphLCyQ5SpSJZTb4reN+kTcYru5yIfXoRPw=="],
 
     "pug-filters/resolve": ["resolve@1.22.10", "", { "dependencies": { "is-core-module": "^2.16.0", "path-parse": "^1.0.7", "supports-preserve-symlinks-flag": "^1.0.0" }, "bin": { "resolve": "bin/resolve" } }, "sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w=="],
+
+    "@gh-profile/app/@gh-profile/apis/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
+
+    "@gh-profile/app/@gh-profile/apis/@gh-profile/spider": ["@gh-profile/spider@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "cheerio": "1.0.0" } }, "sha512-YYWVw/iH3lPINAWltaQ+t3s1zQ+Pbv/M09DH3YA0umSOqwH2VXw0gPYhKfXkUmOHLPrhA59RpXwMYPS3saac3g=="],
 
     "mlly/pkg-types/confbox": ["confbox@0.1.8", "", {}, "sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w=="],
   }

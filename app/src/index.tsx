@@ -1,4 +1,4 @@
-import { APIs, get } from "apis";
+import { APIs, get } from "@gh-profile/apis";
 import { renderFile } from "pug";
 import { join } from "path";
 import index from "./index.html";

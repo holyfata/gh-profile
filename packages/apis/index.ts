@@ -1,5 +1,5 @@
-import Spider, { type ScrapeOptions } from 'spider';
-import { URL } from 'shared';
+import Spider, { type ScrapeOptions } from '@gh-profile/spider';
+import { URL } from '@gh-profile/shared';
 
 // 当前 API 版本号
 const version = 'v1';

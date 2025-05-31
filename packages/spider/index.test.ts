@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'bun:test';
-import { URL } from 'shared';
+import { URL } from '@gh-profile/shared';
 import Spider, { ScrapeOptionType, type ScrapeOptions } from '.';
 
 // Spider 爬虫功能测试
