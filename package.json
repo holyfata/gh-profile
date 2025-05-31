@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@douyinfe/semi-icons": "^2.80.0",
+    "@douyinfe/semi-icons": "2.80.0",
+    "@douyinfe/semi-icons-lab": "2.80.0",
     "@douyinfe/semi-ui": "2.80.0",
     "next": "15.3.3",
     "react": "19.1.0",
