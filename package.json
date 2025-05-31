@@ -2,6 +2,7 @@
   "type": "module",
   "private": true,
   "workspaces": [
+    "app",
     "apps/*",
     "packages/*"
   ],

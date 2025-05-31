@@ -1,17 +1,23 @@
 {
-  "name": "bun-react-template",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "main": "src/index.tsx",
+  "name": "@gh-profile/app",
   "module": "src/index.tsx",
+  "type": "module",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "bun --hot src/index.tsx",
     "start": "NODE_ENV=production bun src/index.tsx",
     "build": "bun run build.ts"
   },
   "dependencies": {
+    "@gh-profile/apis": "1.0.0",
     "bun-plugin-tailwind": "0.0.15",
+    "pug": "3.0.3",
     "tailwindcss": "4.1.8"
+  },
+  "devDependencies": {
+    "@types/pug": "2.0.10"
   }
 }

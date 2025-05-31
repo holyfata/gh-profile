@@ -1,9 +1,13 @@
 {
-  "name": "spider",
+  "name": "@gh-profile/spider",
   "module": "index.ts",
   "type": "module",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "cheerio": "1.0.0",
-    "shared": "workspace:*"
+    "@gh-profile/shared": "1.0.0"
   }
 }

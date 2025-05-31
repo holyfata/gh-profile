@@ -1,10 +1,9 @@
 import { APIs, get } from "apis";
 import { renderFile } from "pug";
 import { join } from "path";
+import index from "./index.html";
 
 const PORT = 3000;
-
-console.log(`Server is running on http://127.0.1:${PORT}`);
 
 const API_LIST = [
     APIs.USER_AVATAR,
@@ -20,8 +19,9 @@ const API_LIST = [
 ];
 
 const routes: Record<string, Response> = {
-  '/': new Response(
-    renderFile(join(import.meta.dir, 'index.pug'), { title: 'Bun API Server', apis: API_LIST }),
+  "/": index,
+  '/v1': new Response(
+    renderFile(join(import.meta.dir, 'indexV1.pug'), { title: 'Bun API Server', apis: API_LIST }),
     {
       headers: {
         'Content-Type': 'text/html',
@@ -35,15 +35,19 @@ for (const api of API_LIST) {
 }
 
 Bun.serve({
-  // `routes` requires Bun v1.2.3+
   routes,
 
-  // (optional) fallback for unmatched routes:
-  // Required if Bun's version < 1.2.3
+  development: process.env.NODE_ENV !== "production" && {
+    // Enable browser hot reloading in development
+    hmr: true,
+
+    // Echo console logs from the browser to the server
+    console: true,
+  },
+
   fetch(req) {
     return new Response("Not Found", { status: 404 });
   },
+
   port: PORT,
 });
-
-// http://127.0.0.1:3000/v1/user/avatar
