@@ -1,10 +1,10 @@
-import { ScrapeOptionType, type ScrapeOptions } from "spider";
+import { ScrapeOptionType, type ScrapeOptions } from 'spider';
 
 const timezone: ScrapeOptions = {
-    name: "timezone",
-    type: ScrapeOptionType.Attr,
-    selector: "profile-timezone",
-    attribute: "data-hours-ahead-of-utc"
-}
+  name: 'timezone',
+  type: ScrapeOptionType.Attr,
+  selector: 'profile-timezone',
+  attribute: 'data-hours-ahead-of-utc',
+};
 
 export default timezone;

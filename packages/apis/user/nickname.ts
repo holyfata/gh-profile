@@ -1,9 +1,9 @@
-import { ScrapeOptionType, type ScrapeOptions } from "spider";
+import { ScrapeOptionType, type ScrapeOptions } from 'spider';
 
 const nickname: ScrapeOptions = {
-    name: "nickname",
-    type: ScrapeOptionType.Text,
-    selector: "span[itemprop='name']" 
-}
+  name: 'nickname',
+  type: ScrapeOptionType.Text,
+  selector: "span[itemprop='name']",
+};
 
 export default nickname;
