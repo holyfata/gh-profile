@@ -1,6 +1,7 @@
 import { APIs, get } from "@gh-profile/apis";
 import { renderFile } from "pug";
 import { join } from "path";
+import logger from "pino";
 import index from "./index.html";
 
 const PORT = 3000;
@@ -34,6 +35,8 @@ for (const api of API_LIST) {
   routes[`/${api}`] = new Response(JSON.stringify(await get(api)));
 }
 
+console.error(`Server is running at http://localhost:${PORT}`);
+
 Bun.serve({
   routes,
 
@@ -50,4 +53,5 @@ Bun.serve({
   },
 
   port: PORT,
+  hostname: "0.0.0.0"
 });

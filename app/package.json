@@ -14,6 +14,7 @@
   "dependencies": {
     "@gh-profile/apis": "1.0.3",
     "bun-plugin-tailwind": "0.0.15",
+    "pino": "9.7.0",
     "pug": "3.0.3",
     "tailwindcss": "4.1.8"
   },
