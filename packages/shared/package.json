@@ -1,9 +1,0 @@
-{
-  "name": "@gh-profile/shared",
-  "module": "index.ts",
-  "type": "module",
-  "version": "1.0.2",
-  "publishConfig": {
-    "access": "public"
-  }
-}
