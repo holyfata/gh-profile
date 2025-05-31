@@ -1,0 +1,9 @@
+{
+  "name": "apis",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "common": "workspace:*",
+    "spider": "workspace:*"
+  }
+}
