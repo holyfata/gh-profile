@@ -1,11 +1,11 @@
 import { describe, it, expect } from "bun:test"
-
+import { URL } from "shared";
 import Spider, { ScrapeOptionType, type ScrapeOptions } from "."
 
 // Spider 爬虫功能测试
 describe("Spider", async () => {
     // 预先获取目标页面的 Spider 实例
-    const spider = (await Spider.fetchHtml("https://github.com/holyfata"))!
+    const spider = (await Spider.fetchHtml(URL))!
 
     // 测试：获取昵称
     it("should fetch nickname (HolyFata)", async () => {
@@ -23,7 +23,7 @@ describe("Spider", async () => {
         const followerNum: ScrapeOptions = {
             name: "followerNum",
             type: ScrapeOptionType.Text,
-            selector: "a[href='https://github.com/holyfata?tab=followers']", // 选择器定位粉丝链接
+            selector: `a[href='${URL}?tab=followers']`, // 选择器定位粉丝链接
             handler: (value) => value?.replace("followers", "").trim() || null // 去除文本中的"followers"并去空格
         }
         const value = await spider.scrape(followerNum)

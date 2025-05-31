@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "dependencies": {
-    "common": "workspace:*",
+    "shared": "workspace:*",
     "spider": "workspace:*"
   }
 }

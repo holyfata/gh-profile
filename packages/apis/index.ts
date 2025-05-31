@@ -1,4 +1,5 @@
 import Spider, { type ScrapeOptions } from "spider";
+import { URL } from "shared";
 
 // 当前 API 版本号
 const version = "v1";
@@ -43,7 +44,7 @@ export const get = async (url: APIs) => {
         const spiderConfig = (await import(`./${urlParts[1]}/${urlParts[2]}.ts`)).default as ScrapeOptions;
 
         // 获取目标页面 HTML，并实例化 Spider
-        const spider = await Spider.fetchHtml("https://github.com/holyfata");
+        const spider = await Spider.fetchHtml(URL);
         if (!spider) {
             throw new Error('Failed to fetch HTML content');
         }

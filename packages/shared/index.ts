@@ -55,3 +55,5 @@ export interface Repository {
 export interface Pinned {
     repositories: Repository[]; // 置顶的仓库列表
 }
+
+export const URL = "https://github.com/holyfata"
