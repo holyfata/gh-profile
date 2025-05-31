@@ -37,6 +37,7 @@
       "devDependencies": {
         "@types/pug": "2.0.10",
         "bun": "1.2.15",
+        "cross-env": "7.0.3",
       },
     },
     "packages/apis": {

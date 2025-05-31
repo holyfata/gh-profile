@@ -1,0 +1,145 @@
+doctype html
+html
+  head
+    title Welcome to the API Server
+    style.
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(120deg, #f6f8fa 60%, #e3e8ef 100%);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      h1 {
+        color: #24292f;
+        text-align: center;
+        margin-top: 48px;
+        letter-spacing: 2px;
+        font-size: 2.6em;
+        font-weight: 800;
+        text-shadow: 0 4px 16px #e1e4e8;
+        margin-bottom: 24px;
+      }
+      ul {
+        max-width: 720px;
+        margin: 0 auto 48px auto;
+        padding: 0;
+        list-style: none;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(36,41,47,0.10);
+        border: 1px solid #e1e4e8;
+        overflow: hidden;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px 36px 18px 36px;
+        border-bottom: 1px solid #e1e4e8;
+        transition: background 0.2s;
+        gap: 12px;
+      }
+      li:hover {
+        background: #f0f6ff;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      .api-row {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        margin-bottom: 6px;
+      }
+      span {
+        font-size: 1.18em;
+        color: #0a58ca;
+        font-weight: 600;
+        letter-spacing: 1px;
+        flex: 1;
+        word-break: break-all;
+      }
+      button {
+        background: linear-gradient(90deg, #2ea44f 60%, #218838 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 28px;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(46,164,79,0.10);
+        transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+        outline: none;
+      }
+      button:hover, button:focus {
+        background: linear-gradient(90deg, #22863a 60%, #176c2a 100%);
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 18px rgba(46,164,79,0.13);
+      }
+      pre {
+        background: #23272e;
+        border-radius: 8px;
+        padding: 18px 20px;
+        margin: 0 0 0 0;
+        font-size: 1.08em;
+        color: #d1d5da;
+        overflow-x: auto;
+        max-width: 100%;
+        font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        border: 1px solid #30363d;
+        margin-left: 0;
+        margin-top: 0;
+        min-height: 2.5em;
+        transition: box-shadow 0.2s;
+      }
+      li:hover pre {
+        box-shadow: 0 4px 24px rgba(36,41,47,0.13);
+      }
+      .json-key { color: #79b8ff; }
+      .json-string { color: #b392f0; }
+      .json-number { color: #f69d50; }
+      .json-boolean { color: #56d364; }
+      .json-null { color: #e1e4e8; }
+    script.
+      async function callApi(api) {
+        const res = await fetch(api);
+        let text = await res.text();
+        try {
+          const json = JSON.parse(text);
+          text = syntaxHighlight(json);
+        } catch {}
+        document.getElementById(api).innerHTML = text;
+      }
+      function syntaxHighlight(json) {
+        if (typeof json != 'string') {
+          json = JSON.stringify(json, null, 2);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+          let cls = 'json-number';
+          if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+              cls = 'json-key';
+            } else {
+              cls = 'json-string';
+            }
+          } else if (/true|false/.test(match)) {
+            cls = 'json-boolean';
+          } else if (/null/.test(match)) {
+            cls = 'json-null';
+          }
+          return '<span class="' + cls + '">' + match + '</span>';
+        });
+      }
+  body
+    h1 API List
+    ul
+      each api in apis
+        li
+          .api-row
+            span #{`/${api}`}
+            button(type="button", onclick=`callApi('${api}')`) Request
+          pre(id=api)
