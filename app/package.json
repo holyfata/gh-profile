@@ -18,6 +18,7 @@
     "tailwindcss": "4.1.8"
   },
   "devDependencies": {
-    "@types/pug": "2.0.10"
+    "@types/pug": "2.0.10",
+    "bun": "1.2.15"
   }
 }
