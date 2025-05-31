@@ -1,24 +1,42 @@
 import { APIs, get } from "apis";
+import { renderFile } from "pug";
+import { join } from "path";
 
 const PORT = 3000;
 
 console.log(`Server is running on http://127.0.1:${PORT}`);
 
+const API_LIST = [
+    APIs.USER_AVATAR,
+    APIs.USER_STATUS,
+    APIs.USER_NICKNAME,
+    APIs.USER_BIOGRAPHY,
+    APIs.USER_FOLLOWERS,
+    APIs.USER_FOLLOWING,
+    APIs.USER_COMPANY,
+    APIs.USER_LOCATION,
+    APIs.USER_TIMEZONE,
+    APIs.USER_WEBSITE,
+];
+
+const routes: Record<string, Response> = {
+  '/': new Response(
+    renderFile(join(import.meta.dir, 'index.pug'), { title: 'Bun API Server', apis: API_LIST }),
+    {
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    }
+  ),
+};
+
+for (const api of API_LIST) {
+  routes[`/${api}`] = new Response(JSON.stringify(await get(api)));
+}
+
 Bun.serve({
   // `routes` requires Bun v1.2.3+
-  routes: {
-    // Static routes
-    [`/${APIs.USER_AVATAR}`]: new Response(JSON.stringify(await get(APIs.USER_AVATAR))),
-    [`/${APIs.USER_STATUS}`]: new Response(JSON.stringify(await get(APIs.USER_STATUS))),
-    [`/${APIs.USER_NICKNAME}`]: new Response(JSON.stringify(await get(APIs.USER_NICKNAME))),
-    [`/${APIs.USER_BIOGRAPHY}`]: new Response(JSON.stringify(await get(APIs.USER_BIOGRAPHY))),
-    [`/${APIs.USER_FOLLOWERS}`]: new Response(JSON.stringify(await get(APIs.USER_FOLLOWERS))),
-    [`/${APIs.USER_FOLLOWING}`]: new Response(JSON.stringify(await get(APIs.USER_FOLLOWING))),
-    [`/${APIs.USER_COMPANY}`]: new Response(JSON.stringify(await get(APIs.USER_COMPANY))),
-    [`/${APIs.USER_LOCATION}`]: new Response(JSON.stringify(await get(APIs.USER_LOCATION))),
-    [`/${APIs.USER_TIMEZONE}`]: new Response(JSON.stringify(await get(APIs.USER_TIMEZONE))),
-    [`/${APIs.USER_WEBSITE}`]: new Response(JSON.stringify(await get(APIs.USER_WEBSITE))),
-  },
+  routes,
 
   // (optional) fallback for unmatched routes:
   // Required if Bun's version < 1.2.3

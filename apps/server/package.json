@@ -4,6 +4,10 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "apis": "workspace:*"
+    "apis": "workspace:*",
+    "pug": "3.0.3"
+  },
+  "devDependencies": {
+    "@types/pug": "2.0.10"
   }
 }
