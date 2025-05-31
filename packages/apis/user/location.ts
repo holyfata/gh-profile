@@ -1,4 +1,4 @@
-import { ScrapeOptionType, type ScrapeOptions } from 'spider';
+import { ScrapeOptionType, type ScrapeOptions } from '@gh-profile/spider';
 
 const location: ScrapeOptions = {
   name: 'location',

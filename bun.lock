@@ -27,9 +27,9 @@
     },
     "app": {
       "name": "@gh-profile/app",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "dependencies": {
-        "@gh-profile/apis": "1.0.0",
+        "@gh-profile/apis": "1.0.3",
         "bun-plugin-tailwind": "0.0.15",
         "pug": "3.0.3",
         "tailwindcss": "4.1.8",
@@ -41,21 +41,21 @@
     },
     "packages/apis": {
       "name": "@gh-profile/apis",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "dependencies": {
-        "@gh-profile/shared": "1.0.0",
+        "@gh-profile/shared": "1.0.2",
         "@gh-profile/spider": "1.0.0",
       },
     },
     "packages/shared": {
       "name": "@gh-profile/shared",
-      "version": "1.0.1",
+      "version": "1.0.2",
     },
     "packages/spider": {
       "name": "@gh-profile/spider",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "dependencies": {
-        "@gh-profile/shared": "1.0.0",
+        "@gh-profile/shared": "1.0.2",
         "cheerio": "1.0.0",
       },
     },
@@ -809,13 +809,9 @@
 
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
-    "@gh-profile/apis/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
-
     "@gh-profile/apis/@gh-profile/spider": ["@gh-profile/spider@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "cheerio": "1.0.0" } }, "sha512-YYWVw/iH3lPINAWltaQ+t3s1zQ+Pbv/M09DH3YA0umSOqwH2VXw0gPYhKfXkUmOHLPrhA59RpXwMYPS3saac3g=="],
 
-    "@gh-profile/app/@gh-profile/apis": ["@gh-profile/apis@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "@gh-profile/spider": "1.0.0" } }, "sha512-c9Cx1LCj2bYHbIRH+Da5vn3uh5zAXypDRRNwycD4yYiC8AtO29621JN/EMxkGNb1n+GajLZBf9lhvY+6GTzHrg=="],
-
-    "@gh-profile/spider/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
+    "@gh-profile/app/@gh-profile/apis": ["@gh-profile/apis@1.0.3", "", { "dependencies": { "@gh-profile/shared": "1.0.2", "@gh-profile/spider": "1.0.2" } }, "sha512-j6/8+/y3A2xjYO5PgDFzVA46qgt4eH2wJmleIFCohqe2bQjGMDfKWGO0/inVhwFapT5VOr5VeQeh9HpMA6r3hQ=="],
 
     "@humanfs/node/@humanwhocodes/retry": ["@humanwhocodes/retry@0.3.1", "", {}, "sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA=="],
 
@@ -829,9 +825,7 @@
 
     "pug-filters/resolve": ["resolve@1.22.10", "", { "dependencies": { "is-core-module": "^2.16.0", "path-parse": "^1.0.7", "supports-preserve-symlinks-flag": "^1.0.0" }, "bin": { "resolve": "bin/resolve" } }, "sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w=="],
 
-    "@gh-profile/app/@gh-profile/apis/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
-
-    "@gh-profile/app/@gh-profile/apis/@gh-profile/spider": ["@gh-profile/spider@1.0.0", "", { "dependencies": { "@gh-profile/shared": "1.0.0", "cheerio": "1.0.0" } }, "sha512-YYWVw/iH3lPINAWltaQ+t3s1zQ+Pbv/M09DH3YA0umSOqwH2VXw0gPYhKfXkUmOHLPrhA59RpXwMYPS3saac3g=="],
+    "@gh-profile/apis/@gh-profile/spider/@gh-profile/shared": ["@gh-profile/shared@1.0.0", "", {}, "sha512-zM+W3k+rcjQtGOs/nDjRSR6r5aQHcD62PItz0YPcDCFndnma9QgPg4zqUr4gX8BCLrxWnVNILZAtvZLTXK8Yew=="],
 
     "mlly/pkg-types/confbox": ["confbox@0.1.8", "", {}, "sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w=="],
   }

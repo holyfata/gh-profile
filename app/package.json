@@ -2,7 +2,7 @@
   "name": "@gh-profile/app",
   "module": "src/index.tsx",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -12,7 +12,7 @@
     "build": "bun run build.ts"
   },
   "dependencies": {
-    "@gh-profile/apis": "1.0.0",
+    "@gh-profile/apis": "1.0.3",
     "bun-plugin-tailwind": "0.0.15",
     "pug": "3.0.3",
     "tailwindcss": "4.1.8"

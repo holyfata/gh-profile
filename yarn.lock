@@ -103,13 +103,13 @@
     "@eslint/core" "^0.14.0"
     levn "^0.4.1"
 
-"@gh-profile/apis@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@gh-profile/apis/-/apis-1.0.0.tgz#180566cc081823840a6126be75164df7a97d3737"
-  integrity sha512-c9Cx1LCj2bYHbIRH+Da5vn3uh5zAXypDRRNwycD4yYiC8AtO29621JN/EMxkGNb1n+GajLZBf9lhvY+6GTzHrg==
+"@gh-profile/apis@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@gh-profile/apis/-/apis-1.0.3.tgz#40b00d6a8185ccc04979d6cfd7dd08b2bc133e39"
+  integrity sha512-j6/8+/y3A2xjYO5PgDFzVA46qgt4eH2wJmleIFCohqe2bQjGMDfKWGO0/inVhwFapT5VOr5VeQeh9HpMA6r3hQ==
   dependencies:
-    "@gh-profile/shared" "1.0.0"
-    "@gh-profile/spider" "1.0.0"
+    "@gh-profile/shared" "1.0.2"
+    "@gh-profile/spider" "1.0.2"
 
 "@gh-profile/shared@1.0.0":
   version "1.0.0"

@@ -1,5 +1,5 @@
-import { ScrapeOptionType, type ScrapeOptions } from 'spider';
-import { URL } from 'shared';
+import { ScrapeOptionType, type ScrapeOptions } from '@gh-profile/spider';
+import { URL } from '@gh-profile/shared';
 
 const following: ScrapeOptions = {
   name: 'following',
