@@ -1,8 +1,9 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "description": "A GitHub profile page generator that allows users to create and customize their GitHub profile pages with various themes and components.",
   "keywords": [
