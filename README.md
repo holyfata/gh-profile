@@ -6,8 +6,8 @@
 
 - home: use SSR to render root page
 - api
-    - v1: the apis to operate database
-    - v2: the apis to scrapy page (without session)
+  - v1: the apis to operate database
+  - v2: the apis to scrapy page (without session)
 - tool: some tools for deploying
 
 ## Multi Page
