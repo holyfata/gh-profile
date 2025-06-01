@@ -1,6 +1,6 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -30,7 +30,8 @@
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "next lint",
     "prepare": "husky",
-    "release": "npm run lint && changelogen --release && npm publish && git push --follow-tags",
+    "before-release": "npm run lint && changelogen --release",
+    "release": "npm run before-release && npm publish && git push --follow-tags && npm run after-release",
     "after-release": "automd",
     "start": "next start"
   },
