@@ -27,7 +27,7 @@
     "commit": "cz",
     "deploy": "next build && next start",
     "dev": "next dev --turbopack",
-    "format": "prettier --write . --ignore-path .gitignore",
+    "format": "prettier --write .",
     "lint": "next lint",
     "prepare": "husky",
     "release": "powershell ./scripts/release.ps1",
@@ -40,7 +40,9 @@
     "mysql2": "3.14.1",
     "next": "15.3.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sqlite": "5.1.1",
+    "sqlite3": "5.1.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
@@ -55,19 +57,9 @@
     "eslint": "9.28.0",
     "eslint-config-next": "15.3.3",
     "husky": "9.1.7",
-    "lint-staged": "16.1.0",
     "prettier": "3.5.3",
     "tailwindcss": "4.1.8",
     "typescript": "5.8.3"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css,scss}": [
-      "prettier --write"
-    ]
   },
   "config": {
     "commitizen": {
