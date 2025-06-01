@@ -1,10 +1,6 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.7",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
+  "version": "0.0.8",
   "description": "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
   "keywords": [
     "github",
@@ -22,6 +18,10 @@
     "type": "github",
     "url": "https://github.com/holyfata/gh-profile"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "build": "next build",
     "commit": "cz",
@@ -30,9 +30,7 @@
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "next lint",
     "prepare": "husky",
-    "before-release": "npm run lint && changelogen --release",
-    "release": "npm run before-release && npm publish && git push --follow-tags && npm run after-release",
-    "after-release": "automd",
+    "release": "zsh ./scripts/release.sh",
     "start": "next start"
   },
   "dependencies": {
