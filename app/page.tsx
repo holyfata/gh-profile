@@ -1,6 +1,17 @@
+import { headers } from 'next/headers';
 import { IconUserStroked, IconBriefStroked, IconMapPinStroked, IconStopwatchStroked, IconChainStroked } from '@douyinfe/semi-icons';
 
-export default function Home() {
+export default async function Home() {
+
+  const host = (await headers()).get('host');
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  const apiUrl = `${protocol}://${host}/api/v1`;
+
+  // 获取接口数据
+  const avatarData = await (
+    await fetch(`${apiUrl}/user/avatar`, { cache: 'no-store' })
+  ).json();
+
   const socialLinks = [{
     icon: <IconBriefStroked />,
     text: "JD.COM"
@@ -14,7 +25,7 @@ export default function Home() {
     icon: <IconChainStroked />,
     text: "holyfata.com"
   }]
-  
+
   return (
     <div>
       <header className="gh-header"></header>
@@ -22,7 +33,7 @@ export default function Home() {
         <div className="gh-sider">
           <img 
             alt="avatar" 
-            src="https://avatars.githubusercontent.com/u/206218794?v=4" 
+            src={avatarData || "https://avatars.githubusercontent.com/u/156598583?v=4"} 
             className="size-74 rounded-full"
           />
           <div className="pt-4 pb-4">
