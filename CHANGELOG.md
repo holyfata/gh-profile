@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.15
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.14...v0.0.15)
+
+### 🚀 Enhancements
+
+- Remove cz-emoji to adapt changelog ([8f98ac8](https://github.com/holyfata/gh-profile/commit/8f98ac8))
+
+### ❤️ Contributors
+
+- Holyfata <holyfata@qq.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.13...v0.0.14)
