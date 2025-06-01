@@ -5,16 +5,33 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "description": "A GitHub profile page generator that allows users to create and customize their GitHub profile pages with various themes and components.",
+  "keywords": [
+    "github",
+    "profile",
+    "generator",
+    "customization",
+    "themes",
+    "components"
+  ],
+  "homepage": "https://gh-profile-iota.vercel.app",
+  "bugs": "https://github.com/holyfata/gh-profile/issues",
+  "license": "MIT",
+  "author": "holyfata <holyfata@qq.com>",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/holyfata/gh-profile"
+  },
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "deploy": "next build && next start",
-    "lint": "next lint",
-    "format": "prettier --write . --ignore-path .gitignore",
-    "prepare": "husky",
     "commit": "cz",
-    "release": "npm run lint && changelogen --release && npm publish && git push --follow-tags"
+    "deploy": "next build && next start",
+    "dev": "next dev --turbopack",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "lint": "next lint",
+    "prepare": "husky",
+    "release": "npm run lint && changelogen --release && npm publish && git push --follow-tags",
+    "start": "next start"
   },
   "dependencies": {
     "@douyinfe/semi-icons": "2.80.0",
