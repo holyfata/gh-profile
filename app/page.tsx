@@ -45,7 +45,7 @@ export default async function Home() {
       <header className="gh-header"></header>
       <main className="gh-main flex justify-center">
         <div className="gh-sider">
-          <Image
+          <img
             alt="avatar"
             src={
               avatarData ||
