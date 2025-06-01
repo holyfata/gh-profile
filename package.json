@@ -13,6 +13,7 @@
     "@douyinfe/semi-icons": "2.80.0",
     "@douyinfe/semi-icons-lab": "2.80.0",
     "@douyinfe/semi-ui": "2.80.0",
+    "mysql2": "3.14.1",
     "next": "15.3.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
