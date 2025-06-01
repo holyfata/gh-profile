@@ -1,6 +1,6 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
   "keywords": [
     "github",
@@ -30,7 +30,7 @@
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "next lint",
     "prepare": "husky",
-    "release": "zsh ./scripts/release.sh",
+    "release": "powershell ./scripts/release.ps1",
     "start": "next start"
   },
   "dependencies": {
