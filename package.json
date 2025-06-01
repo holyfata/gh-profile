@@ -1,6 +1,6 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
   "keywords": [
     "github",
