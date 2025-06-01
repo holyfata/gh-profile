@@ -33,7 +33,7 @@ export async function getWithCache<T>(
       .then((dbValue) => {
         // Only update cache if DB value is not null and different from cached value
         if (dbValue !== null && dbValue !== cachedValue) {
-          setCache(cacheKey, dbValue as any).catch((error) => {
+          setCache(cacheKey, dbValue as string).catch((error) => {
             // Log cache update error
             console.error(
               `[getWithCache] Error updating cache for key "${cacheKey}":`,
@@ -58,7 +58,7 @@ export async function getWithCache<T>(
     const dbValue = await fetchFromDb();
     if (dbValue !== null) {
       try {
-        await setCache(cacheKey, dbValue as any);
+        await setCache(cacheKey, dbValue as string);
       } catch (error) {
         // Log cache set error, but still return DB value
         console.error(

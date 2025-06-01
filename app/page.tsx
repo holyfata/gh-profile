@@ -6,6 +6,7 @@ import {
   IconChainStroked,
 } from "@douyinfe/semi-icons";
 import fetchData from "@/lib/fetch";
+import Image from "next/image";
 
 export default async function Home() {
   const {
@@ -44,7 +45,7 @@ export default async function Home() {
       <header className="gh-header"></header>
       <main className="gh-main flex justify-center">
         <div className="gh-sider">
-          <img
+          <Image
             alt="avatar"
             src={
               avatarData ||

@@ -35,7 +35,7 @@ async function getDb(): Promise<Database> {
 }
 
 // Retrieve a cached value by key
-export async function getCache(key: string): Promise<any | null> {
+export async function getCache(key: string): Promise<string | null> {
   const database = await getDb();
   const row = await database.get("SELECT value FROM cache WHERE key = ?", key);
   if (row && row.value) {
@@ -50,7 +50,7 @@ export async function getCache(key: string): Promise<any | null> {
 }
 
 // Set or update a cached value by key
-export async function setCache(key: string, value: any): Promise<void> {
+export async function setCache(key: string, value: string): Promise<void> {
   const database = await getDb();
   const valueStr = JSON.stringify(value);
   const now = Date.now();
