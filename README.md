@@ -23,8 +23,6 @@ Made by [@holyfata](https://github.com/holyfata) and [community](https://github.
 
 <!-- /automd -->
 
----
-
 <!-- automd:with-automd -->
 
 ---

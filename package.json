@@ -1,11 +1,11 @@
 {
   "name": "@holyfata/gh-profile",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "description": "A GitHub profile page generator that allows users to create and customize their GitHub profile pages with various themes and components.",
+  "description": "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
   "keywords": [
     "github",
     "profile",
@@ -31,6 +31,7 @@
     "lint": "next lint",
     "prepare": "husky",
     "release": "npm run lint && changelogen --release && npm publish && git push --follow-tags",
+    "after-release": "automd",
     "start": "next start"
   },
   "dependencies": {
