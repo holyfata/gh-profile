@@ -14,6 +14,19 @@
   <img src="./images/preview.png" alt="Preview" style="border-radius: 8px; max-width: 100%;" />
 </p>
 
+## Deploy
+
+1. create a scheme called 'gh-profile' in mysql
+2. run the data/mysql.sql to create a table
+3. fill the `.env` based on `example-.env`
+
+![alt text](./images/flower.png)
+
+4. use **nodeV24** to install the modules
+5. npm run dev
+6. open the page in `http://localhost:3000`
+7. run the spider for the first time
+
 ## Contributors
 
 <!-- automd:contributors github="holyfata/gh-profile" author="holyfata" license="MIT" -->
