@@ -10,8 +10,8 @@
 
 > This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.
 
-<p align="center">
-  <img src="./images/preview.png" alt="Preview" style="border: 2px solid #666; border-radius: 8px; max-width: 100%;" />
+<p align="center" style="border: 2px solid #666; border-radius: 8px;">
+  <img src="./images/preview.png" alt="Preview" style="border-radius: 8px; max-width: 100%;" />
 </p>
 
 ## Contributors
