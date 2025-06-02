@@ -5,7 +5,6 @@ import fs from "fs";
 
 // Define the path to the SQLite database file
 const DB_PATH = path.resolve("data/cache.db");
-console.error(__dirname, DB_PATH);
 
 // Ensure the database directory exists
 const DB_DIR = path.dirname(DB_PATH);

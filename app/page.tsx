@@ -4,7 +4,10 @@ import {
   IconMapPinStroked,
   IconStopwatchStroked,
   IconChainStroked,
+  IconBookStroked,
 } from "@douyinfe/semi-icons";
+import MarkdownRenderer from "./mdrender";
+import GitHubCalendar from "react-github-calendar";
 import fetchData from "@/lib/fetch";
 
 export default async function Home() {
@@ -41,9 +44,9 @@ export default async function Home() {
 
   return (
     <div>
-      <header className="gh-header"></header>
-      <main className="gh-main flex justify-center">
-        <div className="gh-sider">
+      <header className="h-18 border-b border-solid border-gray-300 rounded-md"></header>
+      <main className="flex justify-center">
+        <div className="-m-8 mr-6">
           <img
             alt="avatar"
             src={
@@ -89,7 +92,37 @@ export default async function Home() {
             })}
           </ul>
         </div>
-        <div className="gh-content">HH</div>
+        <div className="w-224 ml-6">
+          <div className="p-6 border border-solid border-gray-300 rounded-md mt-4">
+            <MarkdownRenderer />
+          </div>
+          <div className="mt-4">
+            <div className="pb-2">Pinned</div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-4 border border-solid border-gray-300 rounded-md flex flex-col">
+                <div className="text-sm text-sky-600 font-medium shrink-0 flex flex-row items-center">
+                  <IconBookStroked className="text-black mr-2" />
+                  gh-profile
+                </div>
+                <div className="text-xs text-gray-500 grow mt-2">
+                  This is a Next project designed to implement a Github Profile
+                  page. It uses web crawlers for data scraping and achieves
+                  read-write separation based on master-slave databases.
+                </div>
+                <div className="text-xs flex flex-row items-center shrink-0 mt-2 h-5">
+                  <div className="bg-sky-500 rounded-full size-3 mr-1"></div>
+                  Typescript
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4">
+            <div className="pb-2">181 contributions in the last year</div>
+            <div className="p-6 border border-solid border-gray-300 rounded-md mt-4">
+              <GitHubCalendar username="holyfata" />
+            </div>
+          </div>
+        </div>
       </main>
       <footer className="gh-footer"></footer>
     </div>
