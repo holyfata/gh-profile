@@ -1,0 +1,20 @@
+{
+  "socialLinks": [
+    {
+      "icon": "company",
+      "text": "JD.COM"
+    },
+    {
+      "icon": "location",
+      "text": "Beijing, China"
+    },
+    {
+      "icon": "timezone",
+      "text": "8.0"
+    },
+    {
+      "icon": "website",
+      "text": "holyfata.com"
+    }
+  ]
+}

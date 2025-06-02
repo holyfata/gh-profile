@@ -15,7 +15,7 @@ import RepoStatus from "./repoStatus";
  */
 interface RepoCardProps {
   name: string; // Repository name
-  description: string; // Repository description
+  description?: string; // Repository description
   status: {
     isPublic: boolean; // Whether the repository is public
     isArchived: boolean; // Whether the repository is archived

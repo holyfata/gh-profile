@@ -1,62 +1,17 @@
-import {
-  IconUserStroked,
-  IconBriefStroked,
-  IconMapPinStroked,
-  IconStopwatchStroked,
-  IconChainStroked,
-} from "@douyinfe/semi-icons";
+import { IconUserStroked } from "@douyinfe/semi-icons";
 import MarkdownRenderer from "./mdrender";
 import GitHubCalendar from "react-github-calendar";
 import fetchDataV1, { fetchDataV2 } from "@/lib/fetch";
 import RepoCard from "@/components/repoCard";
+import SocialLink from "@/components/socialLink";
+import repoPinned from "@/mocks/repoPinned.json";
+import socialLinks from "@/mocks/socialLinks.json";
 
 export default async function Home() {
-  const {
-    avatarData,
-    bioData,
-    companyData,
-    followerData,
-    followingData,
-    locationData,
-    timezoneData,
-    nameData,
-    websiteData,
-  } = await fetchDataV1();
+  const { avatarData, bioData, followerData, followingData, nameData } =
+    await fetchDataV1();
 
   const readmeData = await fetchDataV2("readme");
-
-  const socialLinks = [
-    {
-      icon: <IconBriefStroked />,
-      text: companyData,
-    },
-    {
-      icon: <IconMapPinStroked />,
-      text: locationData,
-    },
-    {
-      icon: <IconStopwatchStroked />,
-      text: timezoneData,
-    },
-    {
-      icon: <IconChainStroked />,
-      text: websiteData,
-    },
-  ];
-
-  const repoInfo = {
-    name: "gh-profile",
-    description:
-      "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
-    status: {
-      isPublic: true,
-      isArchived: true,
-    },
-    topProgrammingLanguage: {
-      name: "Typescript",
-      color: "#3178c6",
-    },
-  };
 
   return (
     <div>
@@ -97,15 +52,9 @@ export default async function Home() {
             </div>
           </div>
           <ul className="flex flex-col gap-1">
-            {socialLinks.map((item, index) => {
-              return (
-                <li key={index} className="flex items-center text-sm pt-1">
-                  {item.icon}
-                  &nbsp;&nbsp;
-                  {item.text}
-                </li>
-              );
-            })}
+            {socialLinks.socialLinks.map((item, index) => (
+              <SocialLink key={index} {...item} />
+            ))}
           </ul>
         </div>
         <div className="w-224 ml-6">
@@ -115,10 +64,9 @@ export default async function Home() {
           <div className="mt-4">
             <div className="pb-2">Pinned</div>
             <div className="grid grid-cols-2 gap-4">
-              <RepoCard {...repoInfo} />
-              <RepoCard {...repoInfo} />
-              <RepoCard {...repoInfo} />
-              <RepoCard {...repoInfo} />
+              {repoPinned.repositories.map((repo, index) => (
+                <RepoCard key={index} {...repo} />
+              ))}
             </div>
           </div>
           <div className="mt-4">
