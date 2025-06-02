@@ -7,11 +7,7 @@ const nextConfig: NextConfig = {
     "*.local-origin.dev",
     "22.100.247.171.dev",
   ],
-  transpilePackages: [
-    "@douyinfe/semi-ui",
-    "@douyinfe/semi-icons",
-    "@douyinfe/semi-icons-lab",
-  ],
+  transpilePackages: ["@douyinfe/semi-icons"],
 };
 
 export default nextConfig;

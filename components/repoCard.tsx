@@ -16,7 +16,7 @@ import RepoStatus from "./repoStatus";
 interface RepoCardProps {
   name: string; // Repository name
   description?: string; // Repository description
-  status: {
+  status?: {
     isPublic: boolean; // Whether the repository is public
     isArchived: boolean; // Whether the repository is archived
   };
@@ -37,9 +37,13 @@ interface RepoCardProps {
 const RepoCard: React.FC<RepoCardProps> = ({
   name,
   description,
-  status: { isPublic, isArchived },
   topProgrammingLanguage: { name: languageName, color },
+  status,
 }) => {
+  const { isPublic, isArchived } = status || {
+    isPublic: false,
+    isArchived: false,
+  };
   return (
     <div className="p-4 border border-solid border-gray-300 rounded-md flex flex-col">
       {/* Header: Repository icon, name, and status */}
@@ -47,10 +51,12 @@ const RepoCard: React.FC<RepoCardProps> = ({
         <IconBookStroked className="text-black mr-2 size-4" />
         {name}
         {/* Display repository status (Public/Private, Archived/Active) */}
-        <RepoStatus
-          status={isPublic ? "Public" : "Private"}
-          isArchived={isArchived}
-        />
+        {status && (
+          <RepoStatus
+            status={isPublic ? "Public" : "Private"}
+            isArchived={isArchived}
+          />
+        )}
       </div>
       {/* Repository description */}
       <div className="text-xs text-gray-500 grow leading-[1.5] mt-2">

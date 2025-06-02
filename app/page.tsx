@@ -1,23 +1,16 @@
-import { fetchDataV2 } from "@/lib/fetch";
+import Info from "@/components/info";
 import MdRender from "@/components/mdRender";
 import Calendar from "@/components/calendar";
 import RepoPinned from "@/components/repoPinned";
-import BaseInfo from "@/components/baseInfo";
-import SocialLinkList from "@/components/socialLinkList";
 
 export default async function Home() {
-  const readmeData = await fetchDataV2("readme");
-
   return (
     <div>
       <header className="h-18 border-b border-solid border-gray-300 rounded-md"></header>
       <main className="flex justify-center">
-        <div className="-m-8 mr-6">
-          <BaseInfo />
-          <SocialLinkList />
-        </div>
+        <Info />
         <div className="w-224 ml-6">
-          <MdRender content={readmeData} />
+          <MdRender />
           <RepoPinned />
           <Calendar />
         </div>

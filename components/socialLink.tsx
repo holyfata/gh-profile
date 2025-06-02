@@ -4,6 +4,7 @@ import {
   IconMapPinStroked,
   IconStopwatchStroked,
   IconChainStroked,
+  IconMailStroked,
 } from "@douyinfe/semi-icons";
 
 /**
@@ -13,7 +14,8 @@ const iconMap: Record<string, ReactNode> = {
   company: <IconBriefStroked />,
   location: <IconMapPinStroked />,
   timezone: <IconStopwatchStroked />,
-  website: <IconChainStroked />,
+  email: <IconMailStroked />,
+  blog: <IconChainStroked />,
 };
 
 /**
