@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.16
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.15...v0.0.16)
+
+### 🚀 Enhancements
+
+- Add the right part ([2cbbadf](https://github.com/holyfata/gh-profile/commit/2cbbadf))
+
+### ❤️ Contributors
+
+- Holyfata <holyfata@qq.com>
+
 ## v0.0.15
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.14...v0.0.15)
