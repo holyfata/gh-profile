@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.17
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.16...v0.0.17)
+
+### 🩹 Fixes
+
+- Path semi-foundation ([249a189](https://github.com/holyfata/gh-profile/commit/249a189))
+
+### 📖 Documentation
+
+- Update readme ([cacb54b](https://github.com/holyfata/gh-profile/commit/cacb54b))
+
+### ❤️ Contributors
+
+- Holyfata <holyfata@qq.com>
+
 ## v0.0.16
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.15...v0.0.16)
