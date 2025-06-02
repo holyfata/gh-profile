@@ -28,6 +28,7 @@
     "deploy": "next build && next start",
     "dev": "next dev --turbopack",
     "format": "prettier --write .",
+    "postinstall": "patch-package",
     "lint": "next lint",
     "prepare": "husky",
     "release": "powershell ./scripts/release.ps1",
@@ -59,6 +60,7 @@
     "eslint": "9.28.0",
     "eslint-config-next": "15.3.3",
     "husky": "9.1.7",
+    "patch-package": "8.0.0",
     "prettier": "3.5.3",
     "tailwindcss": "4.1.8",
     "typescript": "5.8.3"

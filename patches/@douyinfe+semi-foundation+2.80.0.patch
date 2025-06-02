@@ -1,0 +1,16 @@
+diff --git a/node_modules/@douyinfe/semi-foundation/lib/es/codeHighlight/codeHighlight.css b/node_modules/@douyinfe/semi-foundation/lib/es/codeHighlight/codeHighlight.css
+index 8702d20..da93e85 100644
+--- a/node_modules/@douyinfe/semi-foundation/lib/es/codeHighlight/codeHighlight.css
++++ b/node_modules/@douyinfe/semi-foundation/lib/es/codeHighlight/codeHighlight.css
+@@ -28,11 +28,6 @@
+ }
+ .semi-codeHighlight-defaultTheme pre[class*=language-]::selection,
+ .semi-codeHighlight-defaultTheme code[class*=language-]::selection,
+-.semi-codeHighlight-defaultTheme pre[class*=language-]::mozselection,
+-.semi-codeHighlight-defaultTheme code[class*=language-]::mozselection {
+-  text-shadow: none;
+-  background: #b3d4fc;
+-}
+ .semi-codeHighlight-defaultTheme pre[class*=language-] {
+   padding: 1em;
+   margin: 0.5em 0;
