@@ -4,11 +4,11 @@ import {
   IconMapPinStroked,
   IconStopwatchStroked,
   IconChainStroked,
-  IconBookStroked,
 } from "@douyinfe/semi-icons";
 import MarkdownRenderer from "./mdrender";
 import GitHubCalendar from "react-github-calendar";
 import fetchDataV1, { fetchDataV2 } from "@/lib/fetch";
+import RepoCard from "@/components/repoCard";
 
 export default async function Home() {
   const {
@@ -43,6 +43,20 @@ export default async function Home() {
       text: websiteData,
     },
   ];
+
+  const repoInfo = {
+    name: "gh-profile",
+    description:
+      "This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.",
+    status: {
+      isPublic: true,
+      isArchived: true,
+    },
+    topProgrammingLanguage: {
+      name: "Typescript",
+      color: "#3178c6",
+    },
+  };
 
   return (
     <div>
@@ -101,21 +115,10 @@ export default async function Home() {
           <div className="mt-4">
             <div className="pb-2">Pinned</div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 border border-solid border-gray-300 rounded-md flex flex-col">
-                <div className="text-sm text-sky-600 font-medium shrink-0 flex flex-row items-center">
-                  <IconBookStroked className="text-black mr-2" />
-                  gh-profile
-                </div>
-                <div className="text-xs text-gray-500 grow mt-2">
-                  This is a Next project designed to implement a Github Profile
-                  page. It uses web crawlers for data scraping and achieves
-                  read-write separation based on master-slave databases.
-                </div>
-                <div className="text-xs flex flex-row items-center shrink-0 mt-2 h-5">
-                  <div className="bg-sky-500 rounded-full size-3 mr-1"></div>
-                  Typescript
-                </div>
-              </div>
+              <RepoCard {...repoInfo} />
+              <RepoCard {...repoInfo} />
+              <RepoCard {...repoInfo} />
+              <RepoCard {...repoInfo} />
             </div>
           </div>
           <div className="mt-4">
