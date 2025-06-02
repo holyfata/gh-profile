@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.21
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.20...v0.0.21)
+
+### 🚀 Enhancements
+
+- Switch to github api ([d28f373](https://github.com/holyfata/gh-profile/commit/d28f373))
+
+### ❤️ Contributors
+
+- Holyfata ([@holyfata](https://github.com/holyfata))
+
 ## v0.0.20
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.19...v0.0.20)
