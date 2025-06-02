@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.0.22
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.21...v0.0.22)
+
+### 🚀 Enhancements
+
+- Fix pinned ([5048065](https://github.com/holyfata/gh-profile/commit/5048065))
+
+### 🔥 Performance
+
+- Clean the pkg ([f866b35](https://github.com/holyfata/gh-profile/commit/f866b35))
+
+### 🩹 Fixes
+
+- Remove axios ([d832f8e](https://github.com/holyfata/gh-profile/commit/d832f8e))
+
+### ❤️ Contributors
+
+- Holyfata ([@holyfata](https://github.com/holyfata))
+
 ## v0.0.21
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.20...v0.0.21)
