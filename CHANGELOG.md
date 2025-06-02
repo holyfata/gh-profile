@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.18
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.17...v0.0.18)
+
+### 📖 Documentation
+
+- Update readme ([5ded0cd](https://github.com/holyfata/gh-profile/commit/5ded0cd))
+
+### ❤️ Contributors
+
+- Holyfata <holyfata@qq.com>
+
 ## v0.0.17
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.16...v0.0.17)
