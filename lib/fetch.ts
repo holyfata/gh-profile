@@ -4,7 +4,7 @@ import { headers } from "next/headers";
  * Fetches multiple user-related data fields in parallel from the API.
  * @returns An object containing all user data fields.
  */
-const fetchData = async () => {
+const fetchDataV1 = async () => {
   // Get the current host from request headers
   const host = (await headers()).get("host");
   // Determine protocol based on environment
@@ -61,4 +61,29 @@ const fetchData = async () => {
   };
 };
 
-export default fetchData;
+export default fetchDataV1;
+
+const fetchDataV2 = async (url: string) => {
+  // Get the current host from request headers
+  const host = (await headers()).get("host");
+  // Determine protocol based on environment
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+  // Construct the base API URL
+  const apiUrl = `${protocol}://${host}/api/v2`;
+
+  // Fetch the README.md file from the repository
+  const response = await fetch(`${apiUrl}/${url}`, { cache: "no-store" });
+
+  // Check if the response is ok (status in the range 200-299)
+  if (!response.ok) {
+    throw new Error("Failed to fetch README.md");
+  }
+
+  // Read the response text
+  const data = await response.text();
+
+  // Return the data as a string
+  return data;
+};
+
+export { fetchDataV2 };

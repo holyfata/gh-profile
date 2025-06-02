@@ -8,7 +8,7 @@ import {
 } from "@douyinfe/semi-icons";
 import MarkdownRenderer from "./mdrender";
 import GitHubCalendar from "react-github-calendar";
-import fetchData from "@/lib/fetch";
+import fetchDataV1, { fetchDataV2 } from "@/lib/fetch";
 
 export default async function Home() {
   const {
@@ -21,7 +21,9 @@ export default async function Home() {
     timezoneData,
     nameData,
     websiteData,
-  } = await fetchData();
+  } = await fetchDataV1();
+
+  const readmeData = await fetchDataV2("readme");
 
   const socialLinks = [
     {
@@ -94,7 +96,7 @@ export default async function Home() {
         </div>
         <div className="w-224 ml-6">
           <div className="p-6 border border-solid border-gray-300 rounded-md mt-4">
-            <MarkdownRenderer />
+            <MarkdownRenderer content={readmeData} />
           </div>
           <div className="mt-4">
             <div className="pb-2">Pinned</div>
