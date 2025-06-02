@@ -1,12 +1,10 @@
 # GitHub Profile
 
-<!-- automd:badges github="holyfata/gh-profile" license licenseBranch="master" -->
-
 [![npm version](https://img.shields.io/npm/v/@holyfata/gh-profile)](https://npmjs.com/package/@holyfata/gh-profile)
 [![npm downloads](https://img.shields.io/npm/dm/@holyfata/gh-profile)](https://npm.chart.dev/@holyfata/gh-profile)
 [![license](https://img.shields.io/github/license/holyfata/gh-profile)](https://github.com/holyfata/gh-profile/blob/master/LICENSE)
-
-<!-- /automd -->
+[![commit-activity](https://img.shields.io/github/commit-activity/t/holyfata/gh-profile)](https://github.com/holyfata/gh-profile/pulse)
+[![top-language](https://img.shields.io/github/languages/top/holyfata/gh-profile)](https://github.com/holyfata/gh-profile)
 
 > This is a Next project designed to implement a Github Profile page. It uses web crawlers for data scraping and achieves read-write separation based on master-slave databases.
 
