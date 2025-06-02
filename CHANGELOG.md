@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.0.20
+
+[compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.19...v0.0.20)
+
+### 🚀 Enhancements
+
+- Exchage the card ([f0394df](https://github.com/holyfata/gh-profile/commit/f0394df))
+- Excaheg the socialLink ([a97e33f](https://github.com/holyfata/gh-profile/commit/a97e33f))
+- Split the code ([80d55e1](https://github.com/holyfata/gh-profile/commit/80d55e1))
+- Split the code ([7841fc8](https://github.com/holyfata/gh-profile/commit/7841fc8))
+
+### 📖 Documentation
+
+- Add comment ([ca25ed5](https://github.com/holyfata/gh-profile/commit/ca25ed5))
+
+### ❤️ Contributors
+
+- Holyfata <holyfata@qq.com>
+
 ## v0.0.19
 
 [compare changes](https://github.com/holyfata/gh-profile/compare/v0.0.18...v0.0.19)
