@@ -9,10 +9,11 @@ export async function GET() {
 
   try {
     // Fetch README data from GitHub API
-    const data = await axios.get(
+    const response = await fetch(
       `https://pinned.berrysauce.dev/get/${githubName}`,
     );
-    return new Response(JSON.stringify(data.data), {
+    const data = await response.json();
+    return new Response(JSON.stringify(data), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
