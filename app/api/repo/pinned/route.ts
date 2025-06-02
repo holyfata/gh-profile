@@ -1,5 +1,3 @@
-import axios from "axios";
-
 /**
  * API route handler for fetching the README of a specific repository from GitHub.
  * @returns Response containing README data or error message.
